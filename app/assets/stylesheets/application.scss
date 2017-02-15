@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.log-in {
+  margin:0;
+  background:url("http://thumbs.gfycat.com/CavernousAntiqueAtlanticsharpnosepuffer-poster.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat:no-repeat;
+  height:100vh;
+}
+
+.log-in-capsule {
+  height: auto;
+  display: table;
+  width: 300px;
+  margin: auto;
+
+
+}
+
+.last-capsule {
+  margin-top: 20%;
+  border:5px solid black;
+}
