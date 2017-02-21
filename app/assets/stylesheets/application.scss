@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body {
   padding: 0;
@@ -26,7 +28,7 @@ h2 {
 
 .log-in {
   margin:0;
-  background:url("http://thumbs.gfycat.com/CavernousAntiqueAtlanticsharpnosepuffer-poster.jpg");
+  background:image-url("log_in_background.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat:no-repeat;
@@ -37,12 +39,26 @@ h2 {
   height: auto;
   display: table;
   width: 300px;
-  margin: auto;
-
+  float: left;
+  height: 100vh;
+  background-color: darkred;
 
 }
 
 .last-capsule {
-  margin-top: 20%;
-  border:5px solid black;
+  color: white;
+  padding: 30px;
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.log-in-btn {
+
+}
+
+.black-text {
+  color:black;
 }
