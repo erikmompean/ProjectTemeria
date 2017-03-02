@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PT - News</title>
+</head>
+<body>
+
+  <div class="col-md-3"></div>
+  <div class="title-border col-md-7">
+    <div class="scll"><%=image_tag("TemeriaTitle.png", :class => "title")%></div>
+  </div>
+  <div class="side-bar col-md-2">
+    <div class="scll2">
+      <ul>
+        <li><a href="./home">Play Now!</a></li>
+        <li><a class="active" href="#news">News</a></li>
+        <li><a href="../profile/profile">Profile</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="./about">About</a></li>
+        <% if user_devise_signed_in? %>
+            <li>
+              <%= link_to('Logout', destroy_user_devise_session_path, :method => :delete) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('Login', new_user_devise_session_path)  %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="game-container col-md-7">
+    <div class="scll3">
+      <h1>NEWS</h1>
+      <h2>Project temeria Pre-Alfa</h2>
+      <p>Greetings Temerians!
+        We are proud and excited to announce that the latest update (1.3.3) for Project Temeria on PC/Mac/Linux is now live!   From swirling Sandstorms to brand new gear to the elusive and deadly Sand Shark, the 1.3.3 update brings the Deset Biome up to a whole new level!
+      </p>
+
+      <img class="blog-img" src="https://i.ytimg.com/vi/8UO8sdWiDB0/maxresdefault.jpg">
+      <p>
+        So, shake the sand out of your shoes and take a few minutes to check out the changelog below - and while you are there, don't forget to share your thoughts and feedback with the team so that we can continue to improve and evolve Project Temeria moving forward!
+      </p>
+      <hr>
+      <h2>CHANGING OF THE GUARD​</h2>
+      <p>Greetings Temerians!
+        As this is a major milestone in the journey of Terraria on Console and Mobile, we took a step back and evaluated everything that we had currently going on as well as available resources. To that end, we are making a shift in the development teams moving forward. We thank Engine and Codeglue for all of their contributions to bringing Terraria to a wider community but we’ve made the decision to bring all development in-house under one roof with Pipeworks. So say a big thank you to them both, and a give a warm welcome to Pipeworks!
+      </p>
+
+      <img class="blog-img" src="http://vignette1.wikia.nocookie.net/witcher/images/a/aa/Loading_Trade_quarter_day.png">
+      <p>
+        Engine will remain on board until the final Old Gen Console Update is complete, while CodeGlue will remain on board until sometime in Q3, as they continue their work on stabilizing the mobile codebase. CodeGlue will also remain on board for any future 3DS updates.
+      </p>
+    </div>
+  </div>
+  <a href="#" id="back-to-top" title="Back to top"><%=image_tag("sword.png")%></a>
+</body>
+</html>

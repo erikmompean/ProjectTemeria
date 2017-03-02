@@ -19,6 +19,9 @@
 body {
   padding: 0;
   margin: 0;
+  background-image: url("background.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 h2 {
@@ -45,6 +48,16 @@ h2 {
 
 }
 
+.singn-up-capsule {
+  height: auto;
+  display: table;
+  text-align: left;
+  width: 300px;
+  float: right;
+  height: 100vh;
+  background-color: darkred;
+}
+
 .last-capsule {
   color: white;
   padding: 30px;
@@ -56,9 +69,178 @@ h2 {
 }
 
 .log-in-btn {
-
+  margin-top: 10px;
 }
 
 .black-text {
   color:black;
 }
+
+/* SIDEBAR */
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: block;
+  padding: 2%;
+}
+
+.bg-img {
+  background-image: image-url("background.png");
+  background-attachment: fixed;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.title-border {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: image-url("stone.jpg");
+  border-radius: 0px 0px 20px 20px;
+  padding: 0 10px 20px 10px;
+}
+
+@media (max-width: 950px) {
+  .title-border {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 893px) {
+  .side-bar {
+    margin-right: 20px;
+  }
+}
+.scll {
+  background-image: image-url("scroll.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.scll2 {
+  height:100%;
+  background-image: image-url("scroll.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.scll3 {
+  height:100%;
+  background-image:url("scroll.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+  padding: 3%;
+  color: white;
+}
+
+
+.side-bar {
+  height:70%;
+  margin-left: 20px;
+  background-image: image-url("stone.jpg");
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
+}
+
+.game-container {
+  margin-top: 1%;
+  height: 65%;
+  background-image: image-url("wood.jpg");
+  border-radius: 20px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li a {
+  display: block;
+  color: yellow;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+li a.active {
+  color: white;
+}
+
+li a:hover:not(.active) {
+
+  color: orange;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-h2 {
+  text-align: center;
+}
+.blog-img {
+  width: 90%;
+  display:block;
+  margin:auto;
+}
+
+.profile-img {
+  padding: 1%;
+  width: 100%;
+  height: 100%;
+  background-image: image-url("Dinosaurio.jpg");
+  background-size: cover;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.profile-stone{
+  width: 150px !important;
+  height: 150px !important;
+  background-image: image-url("stone.jpg");
+  border-radius: 20px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.profile-table {
+  width: 100%;
+}
+
+/* Back to top */
+
+#back-to-top {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+}
+
+#back-to-top.show {
+  opacity: 1;
+}
+#content {
+  height: 2000px;
+}
+
+/*End back to top*/

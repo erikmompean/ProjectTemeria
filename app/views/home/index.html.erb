@@ -1,10 +1,38 @@
-
-<% if user_devise_signed_in? %>
-    <li>
-      <%= link_to('Logout', destroy_user_devise_session_path, :method => :delete) %>
-    </li>
-<% else %>
-    <li>
-      <%= link_to('Login', new_user_devise_session_path)  %>
-    </li>
-<% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PT - HOME</title>
+</head>
+<body>
+<div class="bg-img">
+    <div class="col-md-3 col-sm-5"></div>
+    <div class="title-border col-md-7 col-xs-12 col-sm-12">
+      <div class="scll"><%=image_tag("TemeriaTitle.png", :class => "title")%></div>
+    </div>
+  <div class="side-bar col-md-2">
+    <div class="scll2">
+      <ul>
+        <li><a class="active" href="#home">Play Now!</a></li>
+        <li><a href="./news">News</a></li>
+        <li><a href="../profile/profile">Profile</a></li>
+        <li><a href="#contact">Documentation</a></li>
+        <li><a href="./about">About</a></li>
+        <% if user_devise_signed_in? %>
+            <li>
+              <%= link_to('Logout', destroy_user_devise_session_path, :method => :delete) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('Login', new_user_devise_session_path)  %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="game-container col-md-7">
+    <div class="scll2"></div>
+  </div>
+</div>
+</body>
+</html>

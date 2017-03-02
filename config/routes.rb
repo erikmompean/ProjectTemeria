@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'profile/profile'
+
   get 'home/index'
+  get 'home/news'
+  get 'home/about'
 
   devise_for :user_devises
   # The priority is based upon order of creation: first created -> highest priority.

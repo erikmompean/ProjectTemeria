@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PT - About</title>
+</head>
+<body>
+
+  <div class="col-md-3"></div>
+  <div class="title-border col-md-7">
+    <div class="scll"><%=image_tag("TemeriaTitle.png", :class => "title")%></div>
+  </div>
+  <div class="side-bar col-md-2">
+    <div class="scll2">
+      <ul>
+        <li><a href="index">Play Now!</a></li>
+        <li><a href="./news">News</a></li>
+        <li><a href="../profile/profile">Profile</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a class="active" href="#about">About</a></li>
+        <% if user_devise_signed_in? %>
+            <li>
+              <%= link_to('Logout', destroy_user_devise_session_path, :method => :delete) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('Login', new_user_devise_session_path)  %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="game-container col-md-7">
+    <div class="scll3">
+      <h1>About us</h1>
+      <hr>
+      <h2 class="about-h2">Find us on Git Hub !</h2>
+      <a href="https://github.com/erikmompean/ProjectTemeria"><%=image_tag("github.png", :class => "title")%></a>
+      <h2 class="about-h2">Or...</h2>
+      <h2 class="about-h2">On Facebook !</h2>
+      <a href="https://www.facebook.com/erik.mompeanruiz"><%=image_tag("facebook.png", :class => "title")%></a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!--<h1>Profile#profile</h1>
+<p>Find me in app/views/profile/profile.html.erb</p>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- jQueyre -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <title>PT - Profile</title>
+
+</head>
+<body>
+<div class="bg-img">
+  <div class="col-md-3"></div>
+  <div class="title-border col-md-7">
+    <div class="scll"><%=image_tag("TemeriaTitle.png", :class => "title")%></div>
+  </div>
+
+  <div class="side-bar col-md-2">
+    <div class="scll2">
+      <ul>
+        <li><a href="../home/index">Play Now!</a></li>
+        <li><a href="../home/news">News</a></li>
+        <li><a class="active" href="#profile">Profile</a></li>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="../home/about">About</a></li>
+        <% if user_devise_signed_in? %>
+            <li>
+              <%= link_to('Logout', destroy_user_devise_session_path, :method => :delete) %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to('Login', new_user_devise_session_path)  %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="game-container col-md-7">
+    <div class="scll3">
+      <h1>Profile</h1>
+      <hr>
+
+      <div class="row">
+        <div class="profile-stone col-md-1">
+          <div class="profile-img"></div>
+        </div>
+        <div class="col-md-8">
+          <table class="profile-table">
+            <tr>
+              <th>Type of Game</th>
+              <th>Wins</th>
+              <th>Loses</th>
+              <th>Average Money</th>
+            </tr>
+            <tr>
+              <td>Normal</td>
+              <td>23</td>
+              <td>7</td>
+              <td>10.433g</td>
+            </tr>
+            <tr>
+              <td>Ranked</td>
+              <td>12</td>
+              <td>17</td>
+              <td>7.732g</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
