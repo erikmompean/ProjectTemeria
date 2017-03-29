@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   get 'profile/profile'
 
-  get 'home/index'
-  get 'home/news'
-  get 'home/about'
-
+  get '/profile', to: 'profile#profile' , as: 'profile'
+  get '/news', to: 'home#news' , as: 'news'
+  get '/about', to: 'home#about' , as: 'about'
+  get '/index', to: 'home#index' , as: 'home'
+  root to: "home#index"
   devise_for :user_devises
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -60,5 +61,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root to: "home#index"
+
 end
