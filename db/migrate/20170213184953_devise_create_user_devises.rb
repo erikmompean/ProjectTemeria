@@ -4,6 +4,7 @@ class DeviseCreateUserDevises < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.string :username, default: "No name yet"
       t.integer :gold, default: 0
       t.integer :victories, default: 0
       t.integer :defeats, default: 0

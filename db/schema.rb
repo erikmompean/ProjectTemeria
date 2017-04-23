@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405163757) do
+ActiveRecord::Schema.define(version: 20170422191748) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20170405163757) do
 
   add_index "messages", ["user_devise_id"], name: "index_messages_on_user_devise_id"
 
+  create_table "news", force: :cascade do |t|
+    t.string   "title"
+    t.string   "image"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "players", force: :cascade do |t|
     t.integer  "gold"
     t.string   "inGameName"
@@ -79,8 +87,9 @@ ActiveRecord::Schema.define(version: 20170405163757) do
   end
 
   create_table "user_devises", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",            null: false
+    t.string   "encrypted_password",     default: "",            null: false
+    t.string   "username",               default: "No name yet"
     t.integer  "gold",                   default: 0
     t.integer  "victories",              default: 0
     t.integer  "defeats",                default: 0
@@ -89,13 +98,13 @@ ActiveRecord::Schema.define(version: 20170405163757) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,             null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   add_index "user_devises", ["email"], name: "index_user_devises_on_email", unique: true

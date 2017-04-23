@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/news', to: 'home#news' , as: 'news'
   get '/about', to: 'home#about' , as: 'about'
   get '/index', to: 'home#index' , as: 'home'
+
+  post '/news', to: 'home#addnews' , as: 'addnews'
+  post '/addUser/:id', to: 'home#addUsername' , as: 'addUsername'
   root to: "home#index"
   devise_for :user_devises
   devise_for :users, controllers: { sessions: 'user_devises/sessions' }

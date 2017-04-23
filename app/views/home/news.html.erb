@@ -33,6 +33,11 @@
   <div class="game-container col-md-7">
     <div class="scll3">
       <h1>NEWS</h1>
+      <% @news.each do |n| %>
+          <h2><%= n.title %></h2>
+          <img class="blog-img" src='<%= n.image %>'>
+          <p><%=raw sanitize(simple_format(n.content), :tags => %w(br p) ) %></p>
+      <% end %>
       <h2>Project temeria Pre-Alfa</h2>
       <p>Greetings Temerians!
         We are proud and excited to announce that the latest update (1.3.3) for Project Temeria on PC/Mac/Linux is now live!   From swirling Sandstorms to brand new gear to the elusive and deadly Sand Shark, the 1.3.3 update brings the Deset Biome up to a whole new level!
@@ -52,6 +57,18 @@
       <p>
         Engine will remain on board until the final Old Gen Console Update is complete, while CodeGlue will remain on board until sometime in Q3, as they continue their work on stabilizing the mobile codebase. CodeGlue will also remain on board for any future 3DS updates.
       </p>
+
+      <%= form_tag(addnews_path) do %>
+
+          <%= label_tag 'Titulo', nil%>
+          <%= text_field_tag 'title', nil, placeholder: 'introduce el titulo', :required => true %>
+          <%= label_tag 'imagen', nil%>
+          <%= text_field_tag 'image', nil, placeholder: 'introduce el titulo', :required => true %>
+          <%= label_tag 'Descripcion del subforo', nil%>
+          <%= text_area_tag 'contentNews', nil, rows: 5, cols: 1, class: 'contenido', placeholder: 'Aqui va el contenido...', :required => true %>
+
+          <%= submit_tag "Añadir", class: 'btn btn-primary add-foro-btn' %>
+      <% end %>
     </div>
   </div>
   <a href="#" id="back-to-top" title="Back to top"><%=image_tag("sword.png")%></a>
