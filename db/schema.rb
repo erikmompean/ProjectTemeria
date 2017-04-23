@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213184953) do
+ActiveRecord::Schema.define(version: 20170405163757) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20170213184953) do
   end
 
   add_index "groups", ["player_id"], name: "index_groups_on_player_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "subject"
+    t.string   "message"
+    t.integer  "user_devise_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "messages", ["user_devise_id"], name: "index_messages_on_user_devise_id"
 
   create_table "players", force: :cascade do |t|
     t.integer  "gold"
@@ -71,6 +81,11 @@ ActiveRecord::Schema.define(version: 20170213184953) do
   create_table "user_devises", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.integer  "gold",                   default: 0
+    t.integer  "victories",              default: 0
+    t.integer  "defeats",                default: 0
+    t.integer  "soldier_kills",          default: 0
+    t.integer  "alliances_agreed",       default: 0
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

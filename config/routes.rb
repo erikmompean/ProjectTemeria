@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/index', to: 'home#index' , as: 'home'
   root to: "home#index"
   devise_for :user_devises
+  devise_for :users, controllers: { sessions: 'user_devises/sessions' }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

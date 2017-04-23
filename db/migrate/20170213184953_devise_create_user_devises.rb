@@ -4,6 +4,11 @@ class DeviseCreateUserDevises < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.integer :gold, default: 0
+      t.integer :victories, default: 0
+      t.integer :defeats, default: 0
+      t.integer :soldier_kills, default: 0
+      t.integer :alliances_agreed, default: 0
 
       ## Recoverable
       t.string   :reset_password_token

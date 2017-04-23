@@ -31,7 +31,17 @@
   </div>
   <div class="col-md-1"></div>
   <div class="game-container col-md-7">
-    <div class="scll2"></div>
+    <div class="scll-game">
+
+      <div class="row">
+        <div class="col-md-12">
+          <% @users = UserDevise.all %>
+          <% @users.each do |user| %>
+              <%= user.email %><br/>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </body>
